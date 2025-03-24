@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 import { AuthContext } from '../../contexts/Auth/AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/register.css'
 
 
@@ -9,7 +9,6 @@ export const Signup = () => {
     const [password, setPassword] = useState("");
     const [passwordConf, setPasswordConf] = useState("");
     const [error, setError] = useState("");
-    const navigate = useNavigate();
 
     const auth = useContext(AuthContext);
 
