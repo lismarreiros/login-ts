@@ -1,16 +1,23 @@
 import User from "./user-entities.js";
+import bcrypt from 'bcryptjs'
 
 class UserController {
   constructor(userService) {
     this.userService = userService;
   }
 
-  createUser = (req, res) => {
-    const { email, password } = req.body;
-    const user = { email, password };
+  createUser =  async (req, res) => {
+    try {
+      const { email, password } = req.body;
+      const hashedPassword = await bcrypt.hash(password, 10)
+      const user = new User(email, hashedPassword)
+      const newUser = await this.userService.addUser(user);
+      res.status(201).send(newUser);
+    
+    } catch (err) {
+      return res.status(400).send({ error: err.message })
+    }
 
-    const newUser = this.userService.addUser(user);
-    res.status(201).send(newUser);
   }
 
   getUser = (req, res) => {
