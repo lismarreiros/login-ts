@@ -21,9 +21,9 @@ export const AuthProvider = ({children} : {children: JSX.Element}) => {
         validateToken();
     }, [api]); 
 
-    const signup = async (email: string, password: string, passwordConf: string) => {
+    const signup = async (email: string, password: string) => {
         try {
-            const data = await api.signup(email, password, passwordConf); //Envia a solicitação ao backend com email, senha e confirmação de senha
+            const data = await api.signup(email, password) //Envia a solicitação ao backend com email, senha 
             if (data.user && data.token) {
                 setUser(data.User); // Define o usuário no estado
                 setToken(data.token); // Salva o token no localStorage
