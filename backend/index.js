@@ -1,11 +1,5 @@
-const express = require('express');
+import app from './app.js';
 
-const app = express();
-
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.send('Rest API Authentication and Authotization')
+app.listen(3000, () => {
+  console.log('Server listening...')
 });
-
-app.listen(3000, () => console.log('Server started on port 3000'));
