@@ -39,7 +39,7 @@ npm install
 2. Execute o servidor:
 
 ```bash
-node server.js
+npm start
 ```
 
 O backend estará rodando, por exemplo, em `http://localhost:3000`.
@@ -51,7 +51,7 @@ O backend estará rodando, por exemplo, em `http://localhost:3000`.
 1. Instale as dependências:
 
 ```bash
-cd frontend
+cd login
 npm install
 ```
 
