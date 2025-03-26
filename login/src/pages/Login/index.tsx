@@ -18,7 +18,7 @@ export const Login = () => {
             if (isLogged) {
                 navigate('/');
             } else {
-                alert("Não deu certo.");
+                setError("Não deu certo.");
             }
         }
     }

@@ -1,0 +1,17 @@
+### Variables
+@apiurl = http://localhost:3000
+
+### GET 
+GET {{apiurl}}/ HTTP/1.1
+
+### POST
+POST {{apiurl}}/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "landonorris@example.com",
+  "password": "12r445"
+}
+
+### GET
+GET {{apiurl}}/users/1 HTTP/1.1
